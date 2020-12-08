@@ -97,7 +97,7 @@ def main():
         prediction = tags_prediction(ovrLOGREG, text_cod, mlabelbin_coder)
         original_input = {'Votre question':question}
         result = prediction
-        return flask.render_template('main.html', original_input={'Votre question':question}, result=prediction)
+        return flask.render_template('main.html', posts=original_input, result=prediction)
 #====================
 
 if __name__ == '__main__':
