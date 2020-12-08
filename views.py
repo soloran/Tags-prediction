@@ -1,5 +1,5 @@
 import flask
-import pickle
+import pickle5 as pickle
 
 # NLTK
 from nltk.tokenize import RegexpTokenizer
