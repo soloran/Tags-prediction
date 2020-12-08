@@ -2,4 +2,5 @@ flask
 nltk
 gunicorn
 pickle5
+sklearn
 
