@@ -1,4 +1,5 @@
 flask
 nltk
 gunicorn
+pickle5
 
