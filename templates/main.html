@@ -15,27 +15,29 @@ form {
 </head>
 <body>
     <form action="{{ url_for('main') }}" method="POST">
-        <fieldset>
-            <legend>[ Keyword generator ]</legend>       
-	    <textarea name="question" rows=10 cols=60  required></textarea>
-            <br>
-            <input type="submit" value="Send your question">
-        </fieldset>
+        <label for="chmaps">Question</label>       
+        <textarea id="champs" name="question" rows=10 cols=60  required></textarea>
+        <br>
+        <input type="submit" value="Send your question">    
+        <br>
+        <br>
     </form>
-    <br>
     <div class="result" align="left">
-        
+        	
+        {% if original_input %}
             {% for variable, value in original_input.items() %}
                 <b>{{ variable }}</b>: {{ value }}
             {% endfor %}
             <br>
-	    <br> <b>Predicted keywords:</b>
-	    {% if result %}
-	         {{ result }}
+            <br>
+            {% if result %}
+                <b>Predicted keywords:</b> {{ result }}
             {% else %}
-	         :-/
-            {% endif %}
-
+                <b>Predicted keywords:</b> :-/
+            {% endif %}            
+        {% endif %}
+        <br>
+        <br>        
         
     </div>
 </body>
