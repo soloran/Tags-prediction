@@ -1,45 +1,42 @@
 <!doctype html>
 <html>
 <style>
-    form {
-          margin: auto;
-          width: 35%;
-         }
-
-    .result {
-             margin: auto;
-             width: 35%;
-             border: 1px solid #ccc;
-            }
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+}
 </style>
-
 <head>
-    <title>Tags prediction</title>
+    <title>Keyword prediction - Solofohery OC project</title>
 </head>
 <body>
-<form action="{{ url_for('main') }}" method="POST">
-    <fieldset>
-        <legend>Prédiction de tags</legend>
-        Question :
-	<textarea name="question" cols=50 rows=10 required></textarea>
-        <br>
-        <br>
-        <input type="submit">
-    </fieldset>
-</form>
-<br>
-<div class="result" align="left">
-    {% for variable, value in original_input.items() %}
-          <b>{{ variable }}</b> : {{ value }}
-    {% endfor %}
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>[ Keyword generator ]</legend>       
+	    <textarea name="question" rows=10 cols=60  required></textarea>
+            <br>
+            <input type="submit" value="Send your question">
+        </fieldset>
+    </form>
     <br>
-    <br>
-    <b>Tags suggérés :</b>
-    {% if result %}
-        {{ result }}
-    {% else %}
-        Aucun       
-    {% endif %}
-</div>
+    <div class="result" align="left">
+        
+            {% for variable, value in original_input.items() %}
+                <b>{{ variable }}</b>: {{ value }}
+            {% endfor %}
+            <br>
+	    <br> <b>Predicted keywords:</b>
+	    {% if result %}
+	         {{ result }}
+            {% else %}
+	         :-/
+            {% endif %}
+
+        
+    </div>
 </body>
 </html>
