@@ -9,6 +9,11 @@ form {
     margin: auto;
     width: 50%;
 }
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    resize: none    
+}
 </style>
 <head>
     <title>Solofohery API</title>
@@ -17,9 +22,9 @@ form {
     <form action="{{ url_for('main') }}" method="POST">
         <br>
         <br>
-        <label for="chmaps">Question</label>
+        <label for="chmaps">Question:</label>
         <br>      
-        <textarea id="champs" name="question" rows=10 cols=60  required></textarea>
+        <textarea id="champs" name="question" rows=10 required></textarea>
         <br>
         <input type="submit" value="Send your question">    
         <br>
