@@ -3,27 +3,29 @@
 <style>
 form {
     margin: auto;
-    width: 35%;
+    width: 50%;
 }
 .result {
     margin: auto;
-    width: 35%;
+    width: 50%;
 }
 </style>
 <head>
-    <title>Keyword prediction - Solofohery OC project</title>
+    <title>Solofohery API</title>
 </head>
 <body>
     <form action="{{ url_for('main') }}" method="POST">
-        <label for="chmaps">Question</label>       
+        <br>
+        <br>
+        <label for="chmaps">Question</label>
+        <br>      
         <textarea id="champs" name="question" rows=10 cols=60  required></textarea>
         <br>
         <input type="submit" value="Send your question">    
         <br>
         <br>
     </form>
-    <div class="result" align="left">
-        	
+    <div class="result" align="left">        	
         {% if original_input %}
             {% for variable, value in original_input.items() %}
                 <b>{{ variable }}</b>: {{ value }}
@@ -34,11 +36,8 @@ form {
                 <b>Predicted keywords:</b> {{ result }}
             {% else %}
                 <b>Predicted keywords:</b> :-/
-            {% endif %}            
-        {% endif %}
-        <br>
-        <br>        
-        
+            {% endif %}           
+        {% endif %}       
     </div>
 </body>
 </html>
